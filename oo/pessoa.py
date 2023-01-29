@@ -5,8 +5,19 @@ class Pessoa:
         self.nome = nome
         self.filhos = list(filhos)
 
-    def cumprimentar(self):
+    def cumprimentar(self):   # método de instância cria atributo
         return f'Olá {id(self)}'
+
+    @staticmethod
+    def metodo_estatico():   # método estático não cria atributo, funciona como função atrelada a classe,
+        # independe do objeto.
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):   # classe palavra reservada
+        return f'{cls} - olhos {cls.olhos}'
+
+
 
 
 if __name__ == '__main__':
@@ -34,3 +45,5 @@ if __name__ == '__main__':
     print(luciano.olhos)
     print(renzo.olhos)
     print(id(Pessoa.olhos), id(luciano.olhos), id(renzo.olhos))
+    print(Pessoa.metodo_estatico(), luciano.metodo_estatico(), renzo.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), luciano.nome_e_atributos_de_classe(), renzo.nome_e_atributos_de_classe())
