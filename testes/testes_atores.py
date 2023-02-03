@@ -202,7 +202,6 @@ class PassaroVermelhoTests(PassaroBaseTests):
         passaro_vermelho.colidir(outro_ator_na_mesma_posicao)
         self.assertEqual('v', passaro_vermelho.caracter())
 
-
     def teste_velocidade_escalar(self):
         self.assertEqual(20, PassaroVermelho.velocidade_escalar)
 
